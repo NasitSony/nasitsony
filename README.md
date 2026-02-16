@@ -15,7 +15,8 @@ My work focuses on:
 - Designing and analyzing consensus protocols (Byzantine Fault Tolerance)
 
 📄 Published Research:  
-- *Prioritized-MVBA: Optimal Asynchronous Byzantine Agreement Protocol* (Springer - Journal of Information Security)
+- *Prioritized-MVBA: A New Approach to Design an Optimal Asynchronous Byzantine Agreement Protocol* (Springer - International Journal of Information Security)
+- *Slim-ABC: An Optimized Atomic Broadcast Protocol* (Springer - International Journal of Networked and Distributed Computing)
 
 ---
 
@@ -75,6 +76,19 @@ Event-driven systems, fault tolerance, idempotency, retries
 
 ---
 
+## ✍️ Writing
+
+I write about building production-grade AI systems and distributed systems:
+
+- Medium: https://medium.com/@nasitsony96
+
+Recent topics:
+- Failure handling in async AI pipelines
+- Idempotency and retries in event-driven systems
+- Designing RAG systems beyond the "happy path"
+
+---
+
 ## 🎯 What I’m Focused On
 
 - Making AI systems **production-ready and reliable**
@@ -85,7 +99,7 @@ Event-driven systems, fault tolerance, idempotency, retries
 
 ## 📬 Let’s Connect
 
-- LinkedIn: (add your link)
+- LinkedIn: www.linkedin.com/in/nasitsony
 - Open to roles in:
   - AI Infrastructure
   - Backend / Platform Engineering
