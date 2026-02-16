@@ -39,17 +39,66 @@ Production-oriented AI system built like real backend infrastructure.
 
 👉 _Focus: Treating AI systems as distributed systems, not simple APIs_
 
+### 🌐 Cloud-Native API Gateway
+
+### 🏗️ Backend Infrastructure & System Design
+
+Designed backend systems as infrastructure components, focusing on security, reliability, and scalability.
+
+- 🌐 Cloud-Native API Gateway  
+  - Centralized authentication (JWT) and request handling  
+  - Acts as a control layer for backend services  
+
+- ⚙️ Event-Driven Architecture  
+  - Kafka-based asynchronous ingestion pipeline (SmartSearch)  
+  - Decoupled services with retry and failure handling  
+
+- 🛠️ Reliability Engineering  
+  - Idempotency and duplicate-safe processing  
+  - Retry, DLQ, and failure recovery strategies  
+  - Observability of system behavior under faults  
+
+
 ---
 
-### ⚙️ (Upcoming) Consensus Protocol Implementation (Rust)
-Implementing fault-tolerant consensus (Raft / HotStuff-style ideas)
+## 🚧 Upcoming Work
 
-**Goals:**
-- Leader election, log replication, fault recovery
-- Simulation of failures (network partitions, node crashes)
+### ⚙️ LSM-based KV Store (C++)
+
+Building a single-node storage engine inspired by LSM-tree designs (similar to RocksDB), focusing on durability, write optimization, and compaction.
+
+**Scope:**
+- Write-Ahead Log (WAL) for crash recovery
+- Memtable + SSTable (LSM-tree architecture)
+- Compaction (size-tiered strategy)
+- Benchmarks with latency histograms (p50/p95/p99)
+
+**Engineering Focus:**
+- Crash safety and recovery guarantees
+- Write vs read amplification trade-offs
+- Storage efficiency and performance
+
+👉 _Foundation layer for a replicated distributed KV store_
+
+---
+
+### ⚙️ Consensus Protocol Implementation (Rust)
+
+Building a fault-tolerant consensus system inspired by Raft and modern BFT protocols (HotStuff-style ideas), focusing on correctness and failure handling.
+
+**Scope:**
+- Leader election and log replication
+- Fault recovery under node crashes and network partitions
+- Message-driven simulation of distributed nodes
+- State machine application and consistency guarantees
+
+**Engineering Focus:**
+- Handling partial failures and asynchronous communication
+- Ensuring safety and liveness properties
 - Performance vs correctness trade-offs
 
-👉 _Bridging research (BFT) with real-world systems_
+👉 _Extending storage systems into fully replicated distributed systems_
+
 
 ---
 
