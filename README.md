@@ -14,10 +14,6 @@ My work focuses on:
 - Building fault-tolerant, event-driven systems
 - Designing and analyzing consensus protocols (Byzantine Fault Tolerance)
 
-📄 Published Research:  
-- *Prioritized-MVBA: A New Approach to Design an Optimal Asynchronous Byzantine Agreement Protocol* (Springer - International Journal of Information Security)
-- *Slim-ABC: An Optimized Atomic Broadcast Protocol* (Springer - International Journal of Networked and Distributed Computing)
-
 ---
 
 ## 🔥 Featured Projects
@@ -102,13 +98,6 @@ Building a fault-tolerant consensus system inspired by Raft and modern BFT proto
 
 ---
 
-### 🏗️ Backend Infrastructure & System Design
-- Cloud-native API systems (JWT, OAuth2, secure services)
-- Event-driven architectures
-- Observability, retries, and failure handling
-
----
-
 ## 🧰 Tech Stack
 
 **Languages:**  
@@ -136,6 +125,15 @@ Recent topics:
 - Idempotency and retries in event-driven systems
 - Designing RAG systems beyond the "happy path"
 
+---
+
+## 📚 Research
+
+- Google Scholar: https://scholar.google.com/citations?user=mBIQ1-0AAAAJ&hl=en
+
+Selected Work:
+- Prioritized-MVBA: Optimal Asynchronous Byzantine Agreement Protocol  
+  
 ---
 
 ## 🎯 What I’m Focused On
