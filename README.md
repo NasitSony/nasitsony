@@ -1,128 +1,152 @@
-Hi, I'm Nasit Sony 👋  
+# Hi, I'm Nasit Sony 👋
 
-💡 AI Infrastructure Engineer | Distributed Systems | Consensus Protocols (BFT)  
-📍 Building production-grade backend systems for AI and fault-tolerant distributed computing  
+**Distributed Systems & AI Infrastructure Engineer**
+
+I build correctness-first systems — from storage engines and consensus protocols to fault-tolerant pipelines and orchestration platforms.
+
+I focus on what happens when systems fail:
+- crashes
+- retries
+- duplicate processing
+- network delays and reordering
+- adversarial behavior (BFT)
 
 ---
 
 ## 🧠 About Me
-I build distributed backend systems where **correctness matters** — even under failures, partitions, and adversarial conditions.
 
-My work sits at the intersection of:
-- AI infrastructure
-- Distributed systems engineering
-- Byzantine fault-tolerant consensus  
+I design and implement distributed systems where correctness is a requirement — not a best-effort.
 
-I focus on treating AI systems not as simple APIs, but as **fault-tolerant distributed systems with strong correctness guarantees**.
+My work spans:
+
+- **Storage systems** (WAL, crash recovery, replication)
+- **Consensus protocols** (Raft, asynchronous BFT)
+- **Fault-tolerant pipelines** (Kafka, idempotency, retries)
+- **Orchestration systems** (workflow + job scheduling)
+- **AI infrastructure** (RAG pipelines, inference routing)
+
+I treat AI systems as **distributed systems problems**, not just APIs.
 
 ---
 
 ## ⚡ Experience Snapshot
 
-💰 **Production Systems (Fintech)**  
-- Built international money transfer systems handling **$600M+ annual volume**  
-- Focus: correctness, consistency, and performance under real-world constraints  
+### 💰 Production Systems (Fintech)
+- Built international money transfer systems handling **$600M+ annual volume**
+- Focus: correctness, consistency, and reliability under real-world constraints
 
-🔬 **Distributed Systems & BFT Research**  
-- Published work in Springer journals and international conferences  
-- Designed and implemented Byzantine fault-tolerant protocols  
-- Bridging theoretical guarantees with practical system design  
-
-🚀 **Current Focus — AI Infrastructure**  
-- Building production-grade AI pipelines (SmartSearch)  
-- Applying distributed systems thinking to RAG and ML systems  
-- Exploring decentralized and fault-tolerant ML infrastructure  
+### 🔬 Distributed Systems & BFT Research
+- Published work in Springer journals and international conferences
+- Designed and implemented asynchronous Byzantine fault-tolerant protocols
+- Focus: bridging theoretical guarantees with real system behavior
 
 ---
 
-## 🔥 Featured Projects
+## 🚀 What I Build
 
-### 🚧 SmartSearch — AI-Powered Semantic Search & RAG Backend
-Production-oriented AI system built like real backend infrastructure.
+### 🧱 Storage Layer — VeriStore
+Crash-consistent KV engine with WAL durability, snapshotting, and Raft-based replication.
 
-**Key Features:**
-- Asynchronous ingestion (Kafka → Workers → PostgreSQL)
-- Embedding-based semantic search (pgvector + OpenAI)
-- Retrieval-Augmented Generation (RAG)
-
-**Reliability Engineering:**
-- Idempotent processing (no duplicate chunks)
-- Retry + DLQ handling
-- Worker crash recovery (offset-safe Kafka processing)
-- Explicit lifecycle tracking (PENDING → PROCESSING → READY/FAILED)
-- Eventual consistency guarantees  
-
-👉 Focus: AI systems as distributed systems  
+Handles:
+- process crashes (kill -9)
+- partial/torn writes
+- deterministic recovery via WAL replay
+- leader failover and log consistency
 
 ---
 
-### 🌐 Cloud-Native API Gateway
-Backend infrastructure system focused on **security, scalability, and reliability**.
+### 🧠 Consensus Layer — Async-BFT Framework
+Asynchronous Byzantine fault-tolerant consensus framework (MVBA, ABBA).
 
-- JWT & OAuth2 authentication
-- Request routing and service orchestration
-- Observability and failure handling  
-
----
-
-## 🚧 Upcoming Work
-
-### ⚙️ LSM-based KV Store (C++)
-Storage engine inspired by LSM-tree designs (RocksDB-style).
-
-👉 Focus: durability, compaction, and performance trade-offs  
+Simulates:
+- adversarial nodes
+- message delays and reordering
+- quorum-based agreement under failure
 
 ---
 
-### ⚙️ Consensus Protocol Implementation (Rust)
-Fault-tolerant distributed system inspired by Raft and BFT protocols.
+### ⚙️ Orchestration Layer — Veriflow
+Kubernetes-based job orchestration control plane.
 
-👉 Focus: safety, liveness, and failure handling  
+Implements:
+- idempotent job submission
+- concurrency-safe scheduling (SKIP LOCKED)
+- reconciliation-driven execution recovery
+- append-only event timeline for auditability
+
+---
+
+### 🔄 Data Pipeline — SmartSearch
+Fault-aware async ingestion + semantic retrieval backend.
+
+Handles:
+- worker crashes mid-processing
+- Kafka replay / duplicate delivery
+- idempotent ingestion and deterministic recovery
+
+---
+
+### 🔁 Workflow Orchestration — AgentFlow
+Failure-aware workflow execution engine with explicit state transitions.
+
+Features:
+- step-level execution and retry
+- timeout handling and recovery
+- deterministic state reconstruction
+
+---
+
+## 💥 Engineering Philosophy
+
+I design systems for failure, not just success.
+
+I ask:
+- What if a worker crashes mid-processing?
+- What if a write is partially persisted?
+- What if messages are replayed?
+- What if nodes behave maliciously?
+
+I build systems that:
+- recover deterministically
+- enforce explicit state transitions
+- prevent duplication and corruption
+- remain correct under failure
 
 ---
 
 ## 🧰 Tech Stack
 
 **Languages:**  
-Java, Rust (learning), Python  
+Java, C++, Go, Python
 
 **Backend & Infra:**  
-Spring Boot, Kafka, PostgreSQL, pgvector  
-
-**AI Stack:**  
-Embeddings, RAG pipelines, OpenAI APIs  
+Spring Boot, Kafka, PostgreSQL, Kubernetes, Docker
 
 **Distributed Systems:**  
-Consensus, fault tolerance, idempotency, retries  
+WAL, replication, consensus (Raft, BFT), idempotency, retries
+
+**AI Infrastructure:**  
+Embeddings, RAG pipelines, vector search (pgvector)
 
 ---
 
 ## 📚 Research
-- Prioritized-MVBA — Optimal Asynchronous Byzantine Agreement Protocol  
-- Published in Springer journals & international conferences  
-- Google Scholar: https://scholar.google.com/citations?user=mBIQ1-0AAAAJ&hl=en  
 
----
+**Prioritized-MVBA — Asynchronous Byzantine Agreement Protocol**  
+Published in Springer journals & international conferences  
 
-## ✍️ Writing
-- Medium: https://medium.com/@nasitsony96  
-- Topics:
-  - Failure handling in async systems  
-  - Idempotency and retries  
-  - Designing production-grade RAG systems  
+🔗 https://scholar.google.com/citations?user=mBIQ1-0AAAAJ&hl=en
 
 ---
 
 ## 🎯 Current Focus
-- AI infrastructure & reliability  
-- Fault-tolerant distributed systems  
+
+- Distributed systems & storage engines  
+- Fault-tolerant AI infrastructure  
 - Consensus protocol engineering  
 
 ---
 
 ## 📬 Connect
-- LinkedIn: https://www.linkedin.com/in/nasitsony  
 
----
-
-⭐ I believe systems should be designed for failure — not just success.
+🔗 LinkedIn: https://www.linkedin.com/in/nasitsony
