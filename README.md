@@ -1,132 +1,163 @@
-# Hi, I'm Nasit Sony 👋
-
+# Hi, I'm Nasit Sony 👋  
 **Distributed Systems & AI Infrastructure Engineer**
 
 I build correctness-first systems — from storage engines and consensus protocols to fault-tolerant pipelines and orchestration platforms.
 
-I focus on what happens when systems fail:
-- crashes
-- retries
-- duplicate processing
-- network delays and reordering
-- adversarial behavior (BFT)
+My focus is simple:
+
+> Systems must remain correct under failure — not just under ideal conditions.
 
 ---
 
-## 🧠 About Me
+## 🏗️ System Overview
 
-I design and implement distributed systems where correctness is a requirement — not a best-effort.
+<p align="center">
+  <img src="docs/ai-stack.png" alt="AI Infrastructure Stack" width="650"/>
+</p>
 
-My work spans:
+<p align="center">
+  End-to-end AI infrastructure stack: workload → orchestration → serving → storage → consensus
+</p>
 
-- **Storage systems** (WAL, crash recovery, replication)
-- **Consensus protocols** (Raft, asynchronous BFT)
-- **Fault-tolerant pipelines** (Kafka, idempotency, retries)
-- **Orchestration systems** (workflow + job scheduling)
-- **AI infrastructure** (RAG pipelines, inference routing)
+---
 
-I treat AI systems as **distributed systems problems**, not just APIs.
+## 🧠 The Idea
+
+AI systems are not just pipelines.
+
+They are **multi-layer distributed systems**, where each layer handles a different class of failures:
+
+- crashes  
+- retries & duplicate processing  
+- network delays and reordering  
+- resource contention  
+- adversarial behavior (Byzantine faults)  
+
+I design systems where **correctness is enforced at every layer**.
+
+---
+
+## ⚙️ What I Build (Layered System)
+
+### 🔄 SmartSearch — Client Workload
+Fault-tolerant ingestion and semantic retrieval system.
+
+- Kafka replay & duplicate handling  
+- Idempotent ingestion  
+- Deterministic processing & recovery  
+
+---
+
+### ⚙️ Veriflow — Orchestration Layer
+Kubernetes-based AI workload orchestrator.
+
+- GPU-aware scheduling (type + count)  
+- Gang scheduling for distributed training  
+- Multi-tenant fairness & isolation  
+- Idempotent job submission + retries  
+- Reconciliation-driven execution  
+
+---
+
+### 🧠 LLM Serving Cache — Serving Layer
+Inference-time control plane for cache placement and routing.
+
+- Prefix-aware cache reuse  
+- Session-affinity routing  
+- Cache fill on miss → reuse on hit  
+- Persistent cache state  
+
+---
+
+### 🧱 VeriStore — Storage Layer (KV + Object Store)
+Crash-consistent storage engine with S3-style abstraction.
+
+- Write-Ahead Logging (WAL)  
+- Deterministic recovery via replay  
+- Snapshot + restore  
+- Raft-based replication  
+- Object storage interface built on KV engine  
+
+---
+
+### 🧠 Consensus — Raft + Async BFT
+Agreement layer across replicas.
+
+- Leader-based consensus (Raft)  
+- Asynchronous Byzantine agreement (MVBA)  
+- Handles failures, delays, adversarial nodes  
+
+---
+
+### 🔁 AgentFlow — Workflow Engine
+Failure-aware workflow execution system.
+
+- Step-level retries  
+- Timeout handling  
+- Deterministic state transitions  
+
+---
+
+## 💥 Failure Model
+
+Each layer addresses a specific class of failure:
+
+| Layer | Handles |
+|------|--------|
+| Orchestration | Resource contention, partial execution |
+| Serving | Redundant computation, routing correctness |
+| Pipeline | Retries, duplicates |
+| Storage | Crashes, partial writes |
+| Consensus | Adversarial nodes, agreement |
 
 ---
 
 ## ⚡ Experience Snapshot
 
 ### 💰 Production Systems (Fintech)
-- Built international money transfer systems handling **$600M+ annual volume**
-- Focus: correctness, consistency, and reliability under real-world constraints
+- Built systems handling **$600M+ annual volume**  
+- Focus: correctness, consistency, reliability  
 
 ### 🔬 Distributed Systems & BFT Research
-- Published work in Springer journals and international conferences
-- Designed and implemented asynchronous Byzantine fault-tolerant protocols
-- Focus: bridging theoretical guarantees with real system behavior
+- Published in Springer journals & conferences  
+- Designed asynchronous BFT protocols  
+- Bridging theory ↔ real systems  
 
 ---
 
-## 🚀 What I Build
-
-### 🧱 Storage Layer — VeriStore
-Crash-consistent KV engine with WAL durability, snapshotting, and Raft-based replication.
-
-Handles:
-- process crashes (kill -9)
-- partial/torn writes
-- deterministic recovery via WAL replay
-- leader failover and log consistency
-
----
-
-### 🧠 Consensus Layer — Async-BFT Framework
-Asynchronous Byzantine fault-tolerant consensus framework (MVBA, ABBA).
-
-Simulates:
-- adversarial nodes
-- message delays and reordering
-- quorum-based agreement under failure
-
----
-
-### ⚙️ Orchestration Layer — Veriflow
-Kubernetes-based job orchestration control plane.
-
-Implements:
-- idempotent job submission
-- concurrency-safe scheduling (SKIP LOCKED)
-- reconciliation-driven execution recovery
-- append-only event timeline for auditability
-
----
-
-### 🔄 Data Pipeline — SmartSearch
-Fault-aware async ingestion + semantic retrieval backend.
-
-Handles:
-- worker crashes mid-processing
-- Kafka replay / duplicate delivery
-- idempotent ingestion and deterministic recovery
-
----
-
-### 🔁 Workflow Orchestration — AgentFlow
-Failure-aware workflow execution engine with explicit state transitions.
-
-Features:
-- step-level execution and retry
-- timeout handling and recovery
-- deterministic state reconstruction
-
----
-
-## 💥 Engineering Philosophy
+## 💡 Engineering Philosophy
 
 I design systems for failure, not just success.
 
 I ask:
-- What if a worker crashes mid-processing?
-- What if a write is partially persisted?
-- What if messages are replayed?
-- What if nodes behave maliciously?
+
+- What if a worker crashes mid-processing?  
+- What if a write is partially persisted?  
+- What if messages are replayed?  
+- What if nodes behave maliciously?  
 
 I build systems that:
-- recover deterministically
-- enforce explicit state transitions
-- prevent duplication and corruption
-- remain correct under failure
+
+- recover deterministically  
+- enforce explicit state transitions  
+- prevent duplication and corruption  
+- remain correct under failure  
 
 ---
 
 ## 🧰 Tech Stack
 
 **Languages:**  
-Java, C++, Go, Python
+Java, C++, Go, Python  
 
 **Backend & Infra:**  
-Spring Boot, Kafka, PostgreSQL, Kubernetes, Docker
+Spring Boot, Kafka, PostgreSQL, Kubernetes, Docker  
 
 **Distributed Systems:**  
-WAL, replication, consensus (Raft, BFT), idempotency, retries
+WAL, replication, consensus (Raft, BFT), idempotency, retries  
 
 **AI Infrastructure:**  
-Embeddings, RAG pipelines, vector search (pgvector)
+Embeddings, RAG pipelines, vector search (pgvector)  
 
 ---
 
@@ -135,7 +166,7 @@ Embeddings, RAG pipelines, vector search (pgvector)
 **Prioritized-MVBA — Asynchronous Byzantine Agreement Protocol**  
 Published in Springer journals & international conferences  
 
-🔗 https://scholar.google.com/citations?user=mBIQ1-0AAAAJ&hl=en
+🔗 https://scholar.google.com/citations?user=mBIQ1-0AAAAJ&hl=en  
 
 ---
 
@@ -149,4 +180,4 @@ Published in Springer journals & international conferences
 
 ## 📬 Connect
 
-🔗 LinkedIn: https://www.linkedin.com/in/nasitsony
+🔗 LinkedIn: https://www.linkedin.com/in/nasitsony  
