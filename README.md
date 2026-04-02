@@ -12,7 +12,7 @@ My focus is simple:
 ## 🏗️ System Overview
 
 <p align="center">
-  <img src="docs/ai-stack.png" alt="AI Infrastructure Stack" width="650"/>
+  <img src="images/aiinfrastructure.png" alt="AI Infrastructure Stack" width="650"/>
 </p>
 
 <p align="center">
